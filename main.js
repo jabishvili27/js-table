@@ -13,6 +13,9 @@ let person = [
   },
 ];
 const table = document.querySelector(".table");
+function addTable(){
+
+  
 for (let i = 0; i < person.length; i++) {
   let row = document.createElement("tr");
   let name = document.createElement("td");
@@ -90,4 +93,26 @@ for (var i = 0; i < person.length; i++) {
   } else {
     document.querySelector(`.css${i}`).style.backgroundColor = "green";
   }
+}
+}
+addTable();
+let add1=document.querySelector("#add1");
+let add2=document.querySelector("#add2");
+let add3=document.querySelector("#add3");
+let add4=document.querySelector("#add4");
+let butt=document.querySelector(".butt");
+
+function myfunction(){
+  var obj ={
+    name:add1.value,
+    score:[parseInt(add2.value),parseInt(add3.value),parseInt(add4.value)]
+  }
+  person.push(obj);
+  console.log(person);
+  table.innerHTML="";
+  addTable();
+  add1.value="";
+  add2.value="";
+  add3.value="";
+  add4.value="";
 }
